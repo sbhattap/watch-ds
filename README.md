@@ -193,6 +193,15 @@ These are the paper's three features, following its reference code
 - **Grid edge:** the transformer's chosen window sits at the edge of its grid. Longer windows
   were not tried, so its result may be conservative.
 
+### Next step
+
+- **Context or transformer?** The comparison above changes two things at once: the
+  transformer sees neighbouring epochs, and it is a different model. The next run gives the
+  MLP the same context, as the features of the epochs around each one, with the same folds
+  and inner-fold tuning.
+  - If that MLP matches the transformer at 3 classes, the gain comes from context.
+  - If it doesn't, the transformer adds something beyond context.
+
 ## Data and handling
 
 Per-subject figures below come from `results/tables/subjects.csv`, written by `make data`.
